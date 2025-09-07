@@ -1,0 +1,17 @@
+# Python cache & venv
+venv/
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local env & secrets (pass at runtime with --env or --env-file)
+.env
+.env.*
+
+# Misc
+*.log
+.DS_Store

@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: car-pics-backend:latest
+    container_name: car-pics-backend
+    environment:
+      - PORT=8009
+    env_file:
+      - ./.env     # LangSmith vars only (no Google key; it comes from the request)
+    ports:
+      - "8009:8009"
+

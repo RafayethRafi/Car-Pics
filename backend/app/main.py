@@ -21,7 +21,7 @@ from langsmith import traceable
 # ---------------------------
 load_dotenv()
 
-app = FastAPI(title="Car Pics API", version="1.8.0")
+app = FastAPI(title="Car Pics API", version="1")
 
 app.add_middleware(
     CORSMiddleware,
@@ -82,7 +82,7 @@ def build_prompt(user_prompt: str, style_key: Optional[str]) -> str:
         # Fallback if user text has unmatched braces etc.
         return f"{template}\n\n{user_prompt}".strip()
 
-@traceable(name="car-pics.refine", tags=["car-pics", "refine", "gemini-2.5-flash"])
+@traceable(name="Prompt Refiner")
 def refine_user_prompt(
     model_name: str,
     user_prompt: str,
@@ -152,7 +152,7 @@ Requirements:
 
     return (refined or user_prompt).strip()
 
-@traceable(name="car-pics.generate", tags=["car-pics", "image", "gemini-2.5-flash-image-preview"])
+@traceable(name="Image Generator")
 def generate_image_and_text(model_name: str, parts: List[types.Part]) -> Dict[str, Any]:
     """
     Call the image model and return combined text + image outputs.
@@ -184,6 +184,7 @@ def generate_image_and_text(model_name: str, parts: List[types.Part]) -> Dict[st
 # SINGLE ENDPOINT
 # ---------------------------
 @app.post("/generate")
+@traceable(name="Image Generator Endpoint")
 async def generate(
     prompt: str = Form(..., description="Text prompt (required)"),
     image: Optional[UploadFile] = File(default=None, description="Optional reference image"),
