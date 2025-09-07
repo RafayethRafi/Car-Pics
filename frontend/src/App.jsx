@@ -136,25 +136,64 @@ export default function App() {
             </div>
           </div>
 
-          {/* API Key input on top */}
-          <div className="flex items-stretch gap-2">
-            <input
-              type={showKey ? "text" : "password"}
-              autoComplete="off"
-              spellCheck={false}
-              placeholder="Google API Key (optional)"
-              className="w-full md:w-[420px] px-3 py-2 rounded-xl bg-zinc-900/80 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-            />
-            <button
-              onClick={() => setShowKey(v => !v)}
-              className="px-3 py-2 rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 text-sm"
-              aria-label="Toggle key visibility"
-            >
-              {showKey ? "Hide" : "Show"}
-            </button>
-          </div>
+{/* API Key input on top */}
+<div className="flex flex-col gap-1.5 w-full md:w-auto">
+  <div className="flex flex-wrap md:flex-nowrap items-stretch gap-2">
+    <input
+      type={showKey ? "text" : "password"}
+      autoComplete="off"
+      spellCheck={false}
+      placeholder="Google API Key"
+      className="flex-1 min-w-[220px] md:w-[420px] px-3 py-2 rounded-xl bg-zinc-900/80 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+      value={apiKey}
+      onChange={(e) => setApiKey(e.target.value)}
+      aria-label="Google API Key"
+    />
+
+    {/* Link to get an API key */}
+    <a
+      href="https://aistudio.google.com/apikey"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-3 py-2 rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 text-sm flex items-center gap-1"
+      title="Open Google AI Studio in a new tab"
+    >
+      Get a key
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-3.5 h-3.5 opacity-80"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+        <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z" />
+      </svg>
+    </a>
+
+    <button
+      onClick={() => setShowKey(v => !v)}
+      className="px-3 py-2 rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 text-sm"
+      aria-label="Toggle key visibility"
+    >
+      {showKey ? "Hide" : "Show"}
+    </button>
+  </div>
+
+  {/* Helper text under the input row */}
+  <p className="text-[11px] md:text-xs text-zinc-400">
+    You can get your Google API key from{" "}
+    <a
+      href="https://aistudio.google.com/apikey"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2"
+    >
+      Google AI Studio
+    </a>{" "}
+    and paste it in the box above.
+  </p>
+</div>
+
         </div>
       </div>
 
