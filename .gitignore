@@ -1,0 +1,73 @@
+# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# -----------------------------
+# Env & secrets
+# -----------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+bun-debug.log*
+vite*.log
+
+# -----------------------------
+# Python / FastAPI (backend)
+# -----------------------------
+backend/venv/
+backend/.venv/
+**/__pycache__/
+**/*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+.coverage
+coverage/
+coverage.xml
+
+# Optional local DB / runtime artifacts
+*.sqlite3
+*.db
+instance/
+
+# -----------------------------
+# Frontend / Vite / Bun (frontend)
+# -----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/.eslintcache
+
+# If you ever add package managers other than Bun:
+**/node_modules/
+**/.eslintcache
+
+# -----------------------------
+# Build outputs (catch-all)
+# -----------------------------
+dist/
+build/
+
+# -----------------------------
+# Notes
+# -----------------------------
+# Keep lockfiles committed for reproducible installs:
+# bun.lockb (Bun), package-lock.json (npm), pnpm-lock.yaml (pnpm), yarn.lock (Yarn)
+# (So we DO NOT ignore them.)

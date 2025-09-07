@@ -1,0 +1,118 @@
+styles:
+  none:
+    label: "No style (just my prompt)"
+    template: |-
+      # MODE: Neutral (follow user exactly)
+      Output: photorealistic, coherent subject, clean edges, correct perspective.
+      Avoid: cartoonish rendering, plastic skin, over-sharpening, halos, color clipping.
+      User instruction: {user_prompt}
+
+  photo_portrait_bokeh:
+    label: "Portrait — 85mm f/1.4 Bokeh"
+    template: |-
+      # MODE: Portrait, shallow DoF, creamy bokeh
+      Camera/Lens: full-frame look, 85mm prime, aperture f/1.4–f/2.0, focus on the eyes.
+      Lighting: soft key at 45°, gentle fill (-1 to -1.5 EV), subtle rim/hair light; loop or Rembrandt pattern; catchlights visible.
+      Composition: rule of thirds, slight headroom, background far behind subject for strong separation.
+      Color/Grade: natural skin tones, warm-neutral grade, subtle film grain, no oversaturation.
+      Avoid: plastic skin, de-aging, face reshaping, waxy texture, HDR halos, neon/cyberpunk vibes.
+      User instruction: {user_prompt}
+
+  photo_highkey_beauty:
+    label: "High-Key Beauty — Softbox Studio"
+    template: |-
+      # MODE: High-key studio beauty on white sweep
+      Camera/Lens: 85–105mm portrait lens, f/4–f/6.3 for crisp detail.
+      Lighting: large softboxes left+right, bright white seamless slightly overexposed; minimal shadows; clean catchlights.
+      Composition: tight beauty framing, flawless transitions, elegant pose; hair neat.
+      Color/Grade: airy, clean whites, gentle contrast; micro-texture preserved.
+      Avoid: banding in whites, blown skin highlights, waxy smoothing, heavy contrast.
+      User instruction: {user_prompt}
+
+  photo_street_candid:
+    label: "Street — Candid 35mm"
+    template: |-
+      # MODE: Documentary street, energetic but real
+      Camera/Lens: 35mm look, f/2.8–f/4, 1/250–1/500s; handheld vibe; slight motion nuance ok.
+      Lighting: natural/available light; mixed color temps believable.
+      Composition: layered depth, leading lines, decisive moment; subject mid-action.
+      Color/Grade: restrained contrast, muted saturation; subtle film grain (Portra/HP5 vibe).
+      Avoid: neon-cyberpunk palettes, extreme teal/orange, over-processed clarity.
+      User instruction: {user_prompt}
+
+  photo_golden_hour:
+    label: "Golden Hour — Backlit Rim"
+    template: |-
+      # MODE: Warm backlit exterior ~30 min before sunset
+      Camera/Lens: 50–85mm, f/1.8–f/2.8; shallow DoF with controlled highlights.
+      Lighting: sun behind subject; soft flare; warm rim light; gentle haze; bounced fill to keep face luminous.
+      Composition: long shadows, foreground interest, clean horizon; subject separation against sky.
+      Color/Grade: warm amber/orange cast; highlight roll-off; no clipped skies.
+      Avoid: muddy blacks, nuclear saturation, fake sunbursts, blown highlights.
+      User instruction: {user_prompt}
+
+  photo_night_long_exposure:
+    label: "Night City — Long Exposure Trails"
+    template: |-
+      # MODE: Tripod-stable long exposure in city
+      Camera/Lens: 24–35mm; f/8–f/11; ISO 100–400; 2–8s light trails.
+      Lighting: neon signage and street lamps; wet street reflections; clean starbursts at f/11 ok.
+      Composition: leading lines, symmetry or strong vanishing point; crisp architecture.
+      Color/Grade: deep blacks, vivid but balanced neons; minimal noise reduction.
+      Avoid: HDR halos, smeared details, over-denoising, cartoon contrast.
+      User instruction: {user_prompt}
+
+  photo_macro_detail:
+    label: "Macro — 1:1 Texture"
+    template: |-
+      # MODE: Ultra close macro with micro-contrast
+      Camera/Lens: true macro 1:1 rendering, 90–105mm equivalent; f/4–f/8; razor thin DoF.
+      Lighting: diffused ring/soft key; control speculars; black foam core flags for shape.
+      Composition: diagonals through frame, detail hero; background fully blurred.
+      Color/Grade: neutral, accurate hues; emphasize surface texture.
+      Avoid: waxy smoothing, fake oversharpening, watercolor artifacts.
+      User instruction: {user_prompt}
+
+  photo_product_flatlay:
+    label: "Product — Flat-Lay Top-Down"
+    template: |-
+      # MODE: Premium flat-lay, 90° top-down
+      Camera/Lens: 50–60mm macro; f/5.6–f/8 for edge-to-edge crispness.
+      Lighting: overhead scrim or large softbox; soft directional shadows; polarizer look for glare control.
+      Composition: tidy grid or rule-of-thirds; balanced spacing; seamless background (#f5f5f5 or brand color).
+      Color/Grade: color-accurate, clean whites, gentle contrast; subtle floor shadow or reflection.
+      Avoid: harsh specular hotspots, crooked alignment, color shifts.
+      User instruction: {user_prompt}
+
+  photo_studio_fashion:
+    label: "Studio Fashion — 3-Light Strobe"
+    template: |-
+      # MODE: Editorial studio with punchy control
+      Camera/Lens: 35–85mm; f/8; ISO 100; 1/200s; crisp detail.
+      Lighting: key beauty dish; rim lights with strip boxes + grids; V-flat fill; gels optional for accent.
+      Composition: strong pose, clean backdrop (colored paper or cyc); controlled spill; sharp fabric detail.
+      Color/Grade: high contrast fashion look; precise skin tones; rich blacks.
+      Avoid: background banding, uncontrolled spill, plastic skin, muddy blacks.
+      User instruction: {user_prompt}
+
+  photo_bw_film_noir:
+    label: "Black & White — Film Noir"
+    template: |-
+      # MODE: Monochrome low-key noir
+      Camera/Lens: 35–85mm; f/4–f/8; crisp micro-contrast.
+      Lighting: hard key at ~45°; Venetian-blind slats or window slot; deep shadows; light falloff sculpting.
+      Composition: bold geometry; negative space; smoke/haze optional.
+      Color/Grade: true B&W (no tint), rich midtones, natural grain.
+      Avoid: color casts, milky blacks, posterization, soft muddy lighting.
+      User instruction: {user_prompt}
+
+  photo_landscape_epic:
+    label: "Landscape — Epic Wide ND"
+    template: |-
+      # MODE: Wide scenic with natural HDR (no halos)
+      Camera/Lens: 14–20mm; f/8–f/11; tripod feel; CPL look; soft grad ND feel for sky.
+      Lighting: golden hour or blue hour; volumetric depth; clouds with structure; mist acceptable.
+      Composition: leading lines from foreground to background; layered planes; clean horizon.
+      Color/Grade: true-to-life saturation, controlled highlights; fine texture in rocks/foliage.
+      Avoid: cartoon HDR, haloing around edges, crushed shadows, excessive clarity.
+      User instruction: {user_prompt}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* hide scrollbars on the style carousel (optional) */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* soft gradient blobs */
+.glow {
+  position: absolute;
+  inset: -30% -10% auto -10%;
+  height: 280px;
+  background: radial-gradient(60% 60% at 20% 40%, rgba(99,102,241,.35), transparent 60%),
+              radial-gradient(50% 50% at 70% 20%, rgba(250,204,21,.35), transparent 60%);
+  filter: blur(40px);
+  pointer-events: none;
+}
